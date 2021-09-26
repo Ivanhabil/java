@@ -1,12 +1,12 @@
-package ejercicios;
+package ejerciciosDia03;
 
 import java.util.Scanner;
 
-public class Ej04 {
+public class Ej02 {
 
 	public static void main(String[] args) {
-		
-		int[] nums = new int[10];
+
+		int[] nums = new int[7];
 		Scanner scanner = new Scanner(System.in);
 
 		for (int i = 0; i < nums.length; i++) {
@@ -14,19 +14,13 @@ public class Ej04 {
 			int num = scanner.nextInt();
 			nums[i] = num;
 		}
-
-		int ultimo = nums[9];
 		
-		for (int i = 8; i  >= 0; i--) {
-			nums[i+1] = nums[i];
-		}
+		System.out.println("");
+		System.out.println("Números introducidos: ");
 		
-		nums[0] = ultimo;
-		
-		for (int i = 0; i < nums.length; i++) {
+		for (int i = 6; i >= 0; i--) {
 			System.out.println(nums[i]);
 		}
-
 	}
 
 }
