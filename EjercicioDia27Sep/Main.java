@@ -17,7 +17,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-
+		Operacion operaciones = new Operacion();
+		
 		int opcion = 0;
 		float num1, num2;
 
@@ -46,8 +47,7 @@ public class Main {
 
 			System.out.println();
 
-			InterfazOperacion sumaInterfaz = (x, y) -> (x + y);
-			float suma = sumaInterfaz.operar(num1, num2);
+			float suma = operaciones.sumar(num1, num2);
 			System.out.println("Suma: " + suma);
 
 			do {
@@ -61,7 +61,7 @@ public class Main {
 					System.out.println("Introduce el número:");
 					float otroNum = scanner.nextFloat();
 
-					suma = sumaInterfaz.operar(suma, otroNum);
+					suma = operaciones.sumar(suma, otroNum);
 					System.out.println("Suma: " + suma);
 				}
 			} while (opcion != 2);
@@ -76,8 +76,7 @@ public class Main {
 
 			System.out.println();
 
-			InterfazOperacion restaInterfaz = (x, y) -> (x - y);
-			float resta = restaInterfaz.operar(num1, num2);
+			float resta = operaciones.restar(num1, num2);
 			System.out.println("Resta: " + resta);
 
 			do {
@@ -91,7 +90,7 @@ public class Main {
 					System.out.println("Introduce el número:");
 					float otroNum = scanner.nextFloat();
 
-					resta = restaInterfaz.operar(resta, otroNum);
+					resta = operaciones.restar(resta, otroNum);
 					System.out.println("Resta: " + resta);
 				}
 			} while (opcion != 2);
@@ -106,9 +105,8 @@ public class Main {
 
 			System.out.println();
 
-			InterfazOperacion divisionInterfaz = (x, y) -> (x / y);
 			try {
-				division = divisionInterfaz.operar(num1, num2);
+				division = operaciones.dividir(num1, num2);
 			} catch (ArithmeticException e) {
 				System.out.println("Error: No se puede dividir un numero entre cero");
 			}
@@ -125,7 +123,7 @@ public class Main {
 					System.out.println("Introduce el número:");
 					float otroNum = scanner.nextFloat();
 					try {
-						division = divisionInterfaz.operar(division, otroNum);
+						division = operaciones.dividir(division, otroNum);
 					} catch (ArithmeticException e) {
 						System.out.println("Error: No se puede dividir un numero entre cero");
 					}
@@ -143,8 +141,7 @@ public class Main {
 
 			System.out.println();
 
-			InterfazOperacion multiInterfaz = (x, y) -> (x / y);
-			float multi = multiInterfaz.operar(num1, num2);
+			float multi = operaciones.multiplicar(num1, num2);
 			System.out.println("Division: " + multi);
 
 			do {
@@ -158,7 +155,7 @@ public class Main {
 					System.out.println("Introduce el número:");
 					float otroNum = scanner.nextFloat();
 
-					multi = multiInterfaz.operar(multi, otroNum);
+					multi = operaciones.multiplicar(multi, otroNum);
 					System.out.println("Multiplicacion: " + multi);
 				}
 			} while (opcion != 2);
